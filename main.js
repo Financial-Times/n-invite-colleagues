@@ -1,6 +1,6 @@
 const copyButton = document.querySelector('.invite-colleagues__copy-link-button');
 
-function copyLink (event) {
+function copyLink () {
 
 	const copyText = document.querySelector('.invite-colleagues__copy-link-text');
 
