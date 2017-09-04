@@ -1,0 +1,67 @@
+@import "o-buttons/main";
+@import "o-colors/main";
+@import "o-typography/main";
+@import "o-share/main";
+
+.invite-colleagues__outer {
+	background: getColor('wheat');
+	text-align: center;
+}
+
+.invite-colleagues__inner {
+	@include oTypographySans($scale: 3);
+	padding: 24px 0 12px;
+
+	@include oGridRespondTo(L) {
+		padding: 24px 74px 12px;
+	}
+}
+
+.invite-colleagues__inner--strong {
+	@include oTypographySansBold($scale: 3);
+}
+
+.invite-colleagues__copy-outer {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include oGridRespondTo(M) {
+		flex-wrap: nowrap; // do I need to do this on the parent or each child?
+		flex-grow: 0;
+	}
+
+}
+
+.invite-colleagues__copy-link {
+	@include oTypographySans($scale: 0);
+	color: getColor('black-30');
+	background: getColor('white');
+	margin: 12px 0;
+	min-height: 40px;
+	min-width: 200px;
+	padding-left: 8px;
+	text-align: center;
+	flex-grow: 2;
+
+	@include oGridRespondTo(S) {
+		text-align: left;
+	}
+}
+
+.invite-colleagues__copy-link-button {
+	@include oButtons($size: big, $theme: primary);
+	flex-grow: 1;
+	margin: 0 0 12px;
+
+	@include oGridRespondTo(S) {
+		margin: 12px 0;
+	}
+
+	@include oGridRespondTo(S, L) {
+		flex-grow: 0;
+	}
+}
+
+.invite-colleagues__share {
+	@include oTypographySans($scale: 0);
+}
