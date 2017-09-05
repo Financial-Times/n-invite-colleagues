@@ -1,3 +1,5 @@
+TODO: unit tests, tracking
+
 n-invite-colleagues [![Circle CI](https://circleci.com/gh/Financial-Times/n-desktop-app-banner/tree/master.svg?style=svg)](https://circleci.com/gh/Financial-Times/n-desktop-app-banner/tree/master)
 =================
 
