@@ -29,9 +29,7 @@ and `longName` is the full name of the company for use in copy (e.g. in email ti
 ### JS
 
 ```
-import DesktopAppBanner from '@financial-times/n-desktop-app-banner';
-
-new DesktopAppBanner();
+import inviteColleagues from '@financial-times/n-invite-colleagues';
 ```
 
 ## Demo
