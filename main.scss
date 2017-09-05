@@ -2,6 +2,11 @@
 @import "o-colors/main";
 @import "o-typography/main";
 @import "o-share/main";
+@include oShareBase(invite-colleagues);
+@include oShareActionIcon(facebook, invite-colleagues);
+@include oShareActionIcon(linkedin, invite-colleagues);
+@include oShareActionIcon(mail, invite-colleagues);
+
 
 .invite-colleagues__outer {
 	background: getColor('wheat');
@@ -64,4 +69,7 @@
 
 .invite-colleagues__share {
 	@include oTypographySans($scale: 0);
+	display: flex;
+	align-content: center;
+	margin: 12px 0 24px;
 }

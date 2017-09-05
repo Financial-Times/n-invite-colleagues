@@ -1,6 +1,5 @@
 <div class="invite-colleagues__outer">
 	<div class="o-grid-row">
-		<!-- <div data-o-grid-colspan="3"></div> -->
 		<div data-o-grid-colspan="10 M8 XL6 center">
 			<div class="invite-colleagues__inner">
 				<span class="invite-colleagues__inner--strong">Invite your colleagues</span>
@@ -14,25 +13,28 @@
 				<input type="text" class="invite-colleagues__copy-link" value="try.ft.com/{{shortName}}" readonly="">
 				<button href="" class="invite-colleagues__copy-link-button">Copy link and share</button>
 			</div>
+		</div>
+	</div>
+	<div class="o-grid-row">
+		<div data-o-grid-colspan="10 M8 XL6 center">
 			<div class="invite-colleagues__share">
 				or share
-				<div data-o-component="o-share" class="component-share o-share" data-trackable="component-share">
+				<div data-o-component="o-share" class="invite-colleagues">
 					<ul>
-						<li class="component-share__action o-share__action o-share__action--linkedin">
-							<a class="component-share__action--icon" target="_blank" rel="noopener" href="https://www.linkedin.com/shareArticle?mini=true&amp;urltry.ft.com/{{shortName}}&amp;text=join {{longName}}'s free trial of the Financial Times&amp;via=FT" data-trackable="twitter"><i>Share on Twitter (opens new window)</i></a>
+						<li class="invite-colleagues__action invite-colleagues__action--linkedin">
+							<a class="invite-colleagues__action--icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&url=try.ft.com/{{shortName}}&source=Financial+Times&amp;text=Join {{longName}}'s free trial of the Financial Times&amp;via=FT" data-trackable="linkedin"><i>Share on LinkedIn (opens new window)</i></a>
 						</li>
-						<li class="component-share__action o-share__action o-share__action--facebook">
-							<a class="component-share__action--icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=try.ft.com/{{shortName}}&amp;t=join {{longName}}'s free trial of the Financial Times" data-trackable="facebook"><i>Share on Facebook (opens new window)</i></a>
+						<li class="invite-colleagues__action invite-colleagues__action--facebook">
+							<a class="invite-colleagues__action--icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=try.ft.com/{{shortName}}&amp;t=Join {{longName}}'s free trial of the Financial Times" data-trackable="facebook"><i>Share on Facebook (opens new window)</i></a>
 						</li>
-						<li class="component-share__action o-share__action o-share__action--mail">
-							<button class="component-share__action o-share__action o-share__action--mail">
+						<li class="invite-colleagues__action invite-colleagues__action--mail">
+							<a class="invite-colleagues__action--icon" href="mailto:?subject=Join {{longName}}'s free trial of the Financial Times&body=Visit try.ft.com/{{shortName}} to join {{longName}}'s free trial of the Financial Times">
 								<i>Email</i>
-							</button>
+							</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
-		<!-- <div data-o-grid-colspan="3"></div> -->
 	</div>
 </div>

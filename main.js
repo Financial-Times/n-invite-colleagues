@@ -14,7 +14,3 @@ function copyLink () {
 	} catch (err) {}
 
 }
-
-copyButton.addEventListener('click', copyLink, false);
-
-module.exports = copyLink;
