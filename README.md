@@ -5,6 +5,8 @@ n-invite-colleagues [![Circle CI](https://circleci.com/gh/Financial-Times/n-desk
 
 Bower component/Node module for the 'share with colleages' strip used on some B2B pages.
 
+![image](https://user-images.githubusercontent.com/17846996/30050965-35265124-9218-11e7-9dc7-5ac889cd2734.png)
+
 ----
 
 ## Usage
