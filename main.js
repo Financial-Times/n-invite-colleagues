@@ -1,6 +1,6 @@
 function copyLink () {
 	const copyText = document.querySelector('.invite-colleagues__copy-link');
-	const copyDiv = document.querySelector('.invite-colleagues__copy-input');
+	const copyDiv = document.querySelector('.invite-colleagues__copy-outer');
 
 	// select text
 	copyText.focus();
@@ -9,11 +9,9 @@ function copyLink () {
 	try {
 		// copy text
 		document.execCommand('copy');
-		copyDiv.classList.add('invite-colleagues__copy-input--success'); // adds after element with tick icon and confirmation text
-		copyText.classList.add('invite-colleagues__copy-input--success'); // adds green border
+		copyDiv.classList.add('copy-success'); // adds after element with tick icon and confirmation text
 	} catch (err) {
-		copyDiv.classList.add('invite-colleagues__copy-input--fail'); // adds after element with cross icon and failure text
-		copyText.classList.add('invite-colleagues__copy-input--fail'); // adds red border
+		copyDiv.classList.add('copy-fail'); // adds after element with cross icon and failure text
 	}
 
 }
