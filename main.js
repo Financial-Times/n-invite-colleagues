@@ -1,8 +1,6 @@
-const copyButton = document.querySelector('.invite-colleagues__copy-link-button');
-
 function copyLink () {
-
-	const copyText = document.querySelector('.invite-colleagues__copy-link-text');
+	const copyText = document.querySelector('.invite-colleagues__copy-link');
+	const copyDiv = document.querySelector('.invite-colleagues__copy-outer');
 
 	// select text
 	copyText.focus();
@@ -11,10 +9,12 @@ function copyLink () {
 	try {
 		// copy text
 		document.execCommand('copy');
-	} catch (err) {}
+		copyDiv.classList.add('copy-success'); // adds after element with tick icon and confirmation text
+	} catch (err) {
+		copyDiv.classList.add('copy-fail'); // adds after element with cross icon and failure text
+	}
 
 }
 
+const copyButton = document.querySelector('.invite-colleagues__copy-link-button');
 copyButton.addEventListener('click', copyLink, false);
-
-module.exports = copyLink;
