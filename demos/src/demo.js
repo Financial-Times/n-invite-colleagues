@@ -1,10 +1,8 @@
 import oTracking from 'o-tracking';
 
-import DesktopAppBanner from '../../main.js';
+import '../../main';
 
 document.documentElement.classList.add('js', 'enhanced');
-
-new DesktopAppBanner();
 
 oTracking.init({
     server: 'https://spoor-api.ft.com/px.gif',

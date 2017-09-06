@@ -7,7 +7,6 @@
 @include oShareActionIcon(linkedin, invite-colleagues);
 @include oShareActionIcon(mail, invite-colleagues);
 
-
 .invite-colleagues__outer {
 	background: getColor('wheat');
 	text-align: center;
@@ -29,6 +28,7 @@
 .invite-colleagues__copy-outer {
 	display: flex;
 	flex-wrap: wrap;
+	position: relative;
 
 	@include oGridRespondTo(M) {
 		flex-wrap: nowrap; // do I need to do this on the parent or each child?
@@ -37,10 +37,62 @@
 
 }
 
+
+.invite-colleagues__copy-input {
+	display: flex;
+	flex-grow: 1;
+	position: relative;
+
+	&::after {
+		@include oTypographySansBold($scale: 0);
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: 6px;
+		transform: translateY(-50%);
+		line-height: 34px;
+		padding-left: 28px;
+		display: none;
+	}
+
+	&.invite-colleagues__copy-input--success {
+		&::after {
+			@include oIconsGetIcon('tick', getColor('jade'), 24);
+			color: getColor('jade');
+			width: auto;
+			height: 35px;
+			background-position: 0 50%;
+			display: block;
+
+			@include oGridRespondTo(S) {
+				content: 'Copied';
+			}
+		}
+	}
+
+	&.invite-colleagues__copy-input--fail {
+		&::after {
+			@include oIconsGetIcon('cross', getColor('crimson'), 24);
+			color: getColor('crimson');
+			width: auto;
+			height: 35px;
+			background-position: 0 50%;
+			display: block;
+
+			@include oGridRespondTo(S) {
+				content: 'Copy failed';
+			}
+		}
+	}
+
+}
+
 .invite-colleagues__copy-link {
 	@include oTypographySans($scale: 0);
+	position: relative;
 	color: getColor('black-30');
 	background: getColor('white');
+	border: 1px solid;
 	margin: 12px 0;
 	min-height: 40px;
 	min-width: 200px;
@@ -51,6 +103,19 @@
 	@include oGridRespondTo(S) {
 		text-align: left;
 	}
+
+	@include oGridRespondTo(L) {
+		width: 100%;
+	}
+
+	&.invite-colleagues__copy-input--success {
+		border-color: getColor('jade');
+	}
+
+	&.invite-colleagues__copy-input--fail {
+		border-color: getColor('crimson');
+	}
+
 }
 
 .invite-colleagues__copy-link-button {
