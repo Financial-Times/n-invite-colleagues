@@ -31,7 +31,7 @@
 	position: relative;
 
 	@include oGridRespondTo(M) {
-		flex-wrap: nowrap; // do I need to do this on the parent or each child?
+		flex-wrap: nowrap;
 		flex-grow: 0;
 	}
 
@@ -43,8 +43,14 @@
 				color: getColor('jade');
 				width: auto;
 				height: 35px;
+				line-height: 35px;
 				background-position: 0 50%;
 				display: block;
+				position: absolute;
+				top: 50%;
+				right: 10px;
+				transform: translateY(-50%);
+				padding-left: 30px;
 
 				@include oGridRespondTo(S) {
 					content: 'Copied';
