@@ -16,5 +16,9 @@ function copyLink () {
 
 }
 
-const copyButton = document.querySelector('.invite-colleagues__copy-link-button');
-copyButton.addEventListener('click', copyLink, false);
+function init () {
+	const copyButton = document.querySelector('.invite-colleagues__copy-link-button');
+	copyButton.addEventListener('click', copyLink, false);
+}
+
+module.exports = {init};
