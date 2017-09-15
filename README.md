@@ -29,7 +29,9 @@ and `longName` is the full name of the company for use in copy (e.g. in email ti
 ### JS
 
 ```
-import 'n-invite-colleagues';
+import inviteColleagues from '../../main';
+
+inviteColleagues.init();
 ```
 
 ## Demo
