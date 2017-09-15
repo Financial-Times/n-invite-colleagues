@@ -1,6 +1,8 @@
 import oTracking from 'o-tracking';
 
-import '../../main';
+import inviteColleagues from '../../main';
+
+inviteColleagues.init();
 
 document.documentElement.classList.add('js', 'enhanced');
 

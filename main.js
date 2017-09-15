@@ -21,4 +21,4 @@ function init () {
 	copyButton.addEventListener('click', copyLink, false);
 }
 
-module.exports = init;
+module.exports = {init};
