@@ -29,10 +29,15 @@
 	display: flex;
 	flex-wrap: wrap;
 	position: relative;
+	justify-content: center;
 
 	@include oGridRespondTo(M) {
 		flex-wrap: nowrap;
 		flex-grow: 0;
+	}
+
+	.invite-colleagues__copy-input {
+		max-width: 450px;
 	}
 
 	&.copy-success {
@@ -54,6 +59,7 @@
 				padding-left: 30px;
 
 				@include oGridRespondTo(S) {
+					@include oTypographySansBold($scale: 0, $line-height: 35px);
 					content: 'Copied';
 				}
 			}
@@ -125,7 +131,7 @@
 
 .invite-colleagues__copy-link-button {
 	@include oButtons($size: big, $theme: primary);
-	flex-grow: 1;
+	flex-grow: 0;
 	margin: 0 0 12px;
 
 	@include oGridRespondTo(S) {
