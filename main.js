@@ -18,7 +18,10 @@ function copyLink () {
 
 function init () {
 	const copyButton = document.querySelector('.invite-colleagues__copy-link-button');
-	copyButton.addEventListener('click', copyLink, false);
+	
+	if (copyButton) {
+	  copyButton.addEventListener('click', copyLink, false);
+	}
 }
 
 module.exports = {init};
