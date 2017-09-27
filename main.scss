@@ -49,14 +49,13 @@
 				width: auto;
 				height: 35px;
 				line-height: 35px;
-				background-position: 0 50%;
 				background-color: getColor('white');
 				display: block;
 				position: absolute;
 				top: 50%;
 				right: 10px;
 				transform: translateY(-50%);
-				padding-left: 30px;
+				padding-left: 70px;
 
 				@include oGridRespondTo(S) {
 					@include oTypographySansBold($scale: 0, $line-height: 35px);
@@ -70,27 +69,6 @@
 		}
 	}
 
-	&.copy-fail {
-
-		.invite-colleagues__copy-input {
-			&::after {
-				@include oIconsGetIcon('cross', getColor('crimson'), 24);
-				color: getColor('crimson');
-				width: auto;
-				height: 35px;
-				background-position: 0 50%;
-				display: block;
-
-				@include oGridRespondTo(S) {
-					content: 'Copy failed';
-				}
-			}
-		}
-
-		.invite-colleagues__copy-link {
-			border-color: getColor('crimson');
-		}
-	}
 }
 
 

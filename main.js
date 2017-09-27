@@ -1,4 +1,5 @@
 function copyLink () {
+
 	const copyText = document.querySelector('.invite-colleagues__copy-link');
 	const copyDiv = document.querySelector('.invite-colleagues__copy-outer');
 
@@ -11,16 +12,15 @@ function copyLink () {
 		document.execCommand('copy');
 		copyDiv.classList.add('copy-success'); // adds after element with tick icon and confirmation text
 	} catch (err) {
-		copyDiv.classList.add('copy-fail'); // adds after element with cross icon and failure text
 	}
 
 }
 
 function init () {
 	const copyButton = document.querySelector('.invite-colleagues__copy-link-button');
-	
+
 	if (copyButton) {
-	  copyButton.addEventListener('click', copyLink, false);
+		copyButton.addEventListener('click', copyLink, false);
 	}
 }
 
