@@ -84,12 +84,17 @@
 	color: getColor('black-30');
 	background: getColor('white');
 	border: 1px solid;
+	border-right-width: 0px;
 	margin: 12px 0;
 	min-height: 40px;
 	min-width: 200px;
 	padding-left: 8px;
 	text-align: center;
 	flex-grow: 2;
+
+	.enhanced & {
+		border-right-width: 1px;
+	}
 
 	@include oGridRespondTo(S) {
 		text-align: left;
@@ -99,16 +104,33 @@
 		width: 100%;
 	}
 
+}
 
+.invite-colleagues__copy-text {
+	@include oTypographySansBold($scale: 0);
+	background: getColor('white');
+	border: 1px solid getColor('black-30');
+	border-left: 0;
+	color: getColor('black-30');
+	display: inline-block;
+	padding: 11px 20px;
 
-	&.invite-colleagues__copy-input--fail {
-		border-color: getColor('crimson');
+	.enhanced & {
+		display: none;
 	}
-
 }
 
 .invite-colleagues__copy-link-button {
 	@include oButtons($size: big, $theme: primary);
+	display: none;
+
+	.enhanced & {
+		display: inline-block;
+	}
+}
+
+.invite-colleagues__copy-text,
+.invite-colleagues__copy-link-button {
 	flex-grow: 0;
 	margin: 0 0 12px;
 
