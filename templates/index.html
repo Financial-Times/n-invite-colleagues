@@ -9,7 +9,7 @@
 			</div>
 		</div>
 		<div class="o-grid-row">
-			<div data-o-grid-colspan="10 M8 L6 center">
+			<div data-o-grid-colspan="10 M9 XL5 center">
 				<div class="invite-colleagues__copy-outer">
 					<div class="invite-colleagues__copy-input">
 						<input type="text" class="invite-colleagues__copy-link" value="https://try.ft.com/{{shortName}}" readonly="">
@@ -26,13 +26,13 @@
 					<div data-o-component="o-share" class="invite-colleagues">
 						<ul>
 							<li class="invite-colleagues__action invite-colleagues__action--linkedin">
-								<a class="invite-colleagues__action--icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&url=try.ft.com/{{shortName}}&source=Financial+Times&amp;title=Join your colleagues in a free FT trial&amp;text=Get full Premium Digital access to the FT’s expert analysis and commentary. Stay as informed as your colleagues and join the trial today.&amp;via=FT" data-trackable="linkedin"><i>Share on LinkedIn (opens new window)</i></a>
+								<a class="invite-colleagues__action--icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&url=try.ft.com/{{shortName}}&source=Financial+Times&amp;title={{#if isMarketingCampaign}} Join your colleagues in a free FT trial {{else}} Join the FT trial for {{longName}} {{/if}}&amp;text=Get full Premium Digital access to the FT’s expert analysis and commentary. Stay as informed as your colleagues and join the trial today.&amp;via=FT" data-trackable="linkedin"><i>Share on LinkedIn (opens new window)</i></a>
 							</li>
 							<li class="invite-colleagues__action invite-colleagues__action--facebook">
-								<a class="invite-colleagues__action--icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=try.ft.com/{{shortName}}&amp;title=Join the FT trial for {{longName}}&amp;text={{longName}} is providing its employees with a free Premium trial for the Financial Times. Stay as informed as your colleagues and join the trial today." data-trackable="facebook"><i>Share on Facebook (opens new window)</i></a>
+								<a class="invite-colleagues__action--icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=try.ft.com/{{shortName}}" data-trackable="facebook"><i>Share on Facebook (opens new window)</i></a>
 							</li>
 							<li class="invite-colleagues__action invite-colleagues__action--mail">
-								<a class="invite-colleagues__action--icon" data-trackable="email" href="mailto:?subject=Join your colleagues in the FT trial for {{longName}}&body={{longName}} is providing its employees with a free Premium trial for the Financial Times.%0D%0A%0D%0A Stay as informed as your colleagues and join the trial today.%0D%0A%0D%0A http://try.ft.com/{{shortName}}%0D%0A%0D%0A You can share this link with anyone in your company, so they can get access too.%0D%0A%0D%0A You must have an email address at {{longName}} to take part.">
+								<a class="invite-colleagues__action--icon" data-trackable="email" href="mailto:?subject={{#if isMarketingCampaign}} Join your colleagues in a free FT trial {{else}} Join the FT trial for {{longName}}{{/if}}&body={{#if isMarketingCampaign}} Join your colleagues in a free FT trial.{{else}}{{longName}} is providing its employees with a free Premium trial for the Financial Times.{{/if}}%0D%0A%0D%0A Stay as informed as your colleagues and join the trial today.%0D%0A%0D%0A http://try.ft.com/{{shortName}}%0D%0A%0D%0A You can share this link with anyone in your company, so they can get access too.%0D%0A%0D%0A You must have an organisation email address to take part.">
 									<i>Email</i>
 								</a>
 							</li>
