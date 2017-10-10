@@ -11,6 +11,8 @@ Bower component/Node module for the 'share with colleages' strip used on some B2
 
 ## Usage
 
+**Important** This assumes you are using n-ui in your application. We use the `encode` handlebars helper pulled in by n-handlerbars: https://github.com/Financial-Times/n-handlebars#encode
+
 ### Template
 
 ```
@@ -18,7 +20,7 @@ Bower component/Node module for the 'share with colleages' strip used on some B2
 ```
 where `shortName` is the acquisition context company name to use in the copy link
 
-and `longName` is the full name of the company for use in copy (e.g. in email title when sharing the link)
+and `longName` is the full name of the company for use in copy (e.g. in email title when sharing the link). This name will be uri encoded where relevant. If no longName is provided then sensible default copy will be used.
 
 ### CSS
 
