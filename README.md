@@ -18,7 +18,7 @@ Bower component/Node module for the 'share with colleages' strip used on some B2
 ```
 where `shortName` is the acquisition context company name to use in the copy link
 
-and `longName` is the full name of the company for use in copy (e.g. in email title when sharing the link)
+and `longName` is the full name of the company for use in copy (e.g. in email title when sharing the link). This name will be uri encoded where relevant. If no longName is provided then sensible default copy will be used.
 
 ### CSS
 
