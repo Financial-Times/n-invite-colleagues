@@ -11,6 +11,8 @@ Bower component/Node module for the 'share with colleages' strip used on some B2
 
 ## Usage
 
+**Important** This assumes you are using n-ui in your application. We use the `encode` handlerbars helper pulled in by n-handlerbars: https://github.com/Financial-Times/n-handlebars#encode
+
 ### Template
 
 ```
