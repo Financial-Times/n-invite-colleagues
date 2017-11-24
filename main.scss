@@ -8,7 +8,6 @@ $o-banner-is-silent: false;
 @include oShareActionIcon(facebook, invite-colleagues);
 @include oShareActionIcon(linkedin, invite-colleagues);
 @include oShareActionIcon(mail, invite-colleagues);
-
 .invite-colleagues__outer {
 	background: getColor('wheat');
 	text-align: center;
@@ -21,7 +20,6 @@ $o-banner-is-silent: false;
 .invite-colleagues__inner {
 	@include oTypographySans($scale: 3);
 	padding: 24px 0 12px;
-
 	@include oGridRespondTo(L) {
 		padding: 24px 74px 12px;
 	}
@@ -36,18 +34,14 @@ $o-banner-is-silent: false;
 	flex-wrap: wrap;
 	position: relative;
 	justify-content: center;
-
 	@include oGridRespondTo(M) {
 		flex-wrap: nowrap;
 		flex-grow: 0;
 	}
-
 	.invite-colleagues__copy-input {
 		max-width: 450px;
 	}
-
 	&.copy-success {
-
 		.invite-colleagues__copy-input {
 			&::after {
 				@include oIconsGetIcon('tick', getColor('jade'), 24);
@@ -62,21 +56,17 @@ $o-banner-is-silent: false;
 				right: 10px;
 				transform: translateY(-50%);
 				padding-left: 70px;
-
 				@include oGridRespondTo(S) {
 					@include oTypographySansBold($scale: 0, $line-height: 35px);
 					content: 'Copied';
 				}
 			}
 		}
-
 		.invite-colleagues__copy-link {
 			border-color: getColor('jade');
 		}
 	}
-
 }
-
 
 .invite-colleagues__copy-input {
 	display: flex;
@@ -97,19 +87,15 @@ $o-banner-is-silent: false;
 	padding-left: 8px;
 	text-align: center;
 	flex-grow: 2;
-
 	.enhanced & {
 		border-right-width: 1px;
 	}
-
 	@include oGridRespondTo(S) {
 		text-align: left;
 	}
-
 	@include oGridRespondTo(L) {
 		width: 100%;
 	}
-
 }
 
 .invite-colleagues__copy-text {
@@ -120,7 +106,6 @@ $o-banner-is-silent: false;
 	color: getColor('black-80');
 	display: inline-block;
 	padding: 11px 20px;
-
 	.enhanced & {
 		display: none;
 	}
@@ -129,7 +114,6 @@ $o-banner-is-silent: false;
 .invite-colleagues__copy-link-button {
 	@include oButtons($size: big, $theme: primary);
 	display: none;
-
 	.enhanced & {
 		display: inline-block;
 	}
@@ -139,11 +123,9 @@ $o-banner-is-silent: false;
 .invite-colleagues__copy-link-button {
 	flex-grow: 0;
 	margin: 0 0 12px;
-
 	@include oGridRespondTo(S) {
 		margin: 12px 0;
 	}
-
 	@include oGridRespondTo(S, L) {
 		flex-grow: 0;
 	}
@@ -160,31 +142,26 @@ $o-banner-is-silent: false;
 	padding: 10px 12px 10px 0;
 }
 
-
 .o-banner--marketing-secondary {
-
 	& .invite-colleagues__copy-link-button {
 		@include oButtonsTheme(inverse);
 		background-color: getColor('black');
 		color: getColpr('white');
 		border: getColor('black');
 	}
-
 	.o-banner__inner.invite-colleagues-banner {
 		display: flex;
 		flex-wrap: wrap;
 	}
-
 	.invite-colleagues-banner {
-		
 		&__intro {
 			flex-basis: 100%;
 			text-align: center;
 			@include oGridRespondTo(L) {
 				flex: 2;
+				text-align: left;
 			}
 		}
-		
 		&__copy {
 			flex-basis: 100%;
 			@include oGridRespondTo(L) {
@@ -192,34 +169,26 @@ $o-banner-is-silent: false;
 				padding-right: 0;
 			}
 		}
-
 		&__share {
 			flex-basis: 100%;
 			@include oGridRespondTo(L) {
 				flex: 1;
 				padding-left: 0;
 			}
-
 			& .invite-colleagues__share {
 				@include oGridRespondTo(M) {
 					margin: 0;
 				}
 			}
-
 			& li {
 				padding-left: 0;
 			}
-
 			& li:before {
 				content: "";
 			}
 		}
-
 		& .invite-colleagues__inner--strong {
 			@include oTypographySansBold($scale: 2);
-
 		}
-
 	}
-
 }
