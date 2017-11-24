@@ -1,8 +1,6 @@
-function copyLink () {
-
-	const copyText = document.querySelector('.invite-colleagues__copy-link');
-	const copyDiv = document.querySelector('.invite-colleagues__copy-outer');
-
+function copyLink (el) {
+	const copyDiv = el.parentNode;
+	const copyText = copyDiv.querySelector('.invite-colleagues__copy-link');
 	// select text
 	copyText.focus();
 	copyText.select();
@@ -17,10 +15,10 @@ function copyLink () {
 }
 
 function init () {
-	const copyButton = document.querySelector('.invite-colleagues__copy-link-button');
+	const copyButtons = document.querySelectorAll('.invite-colleagues__copy-link-button');
 
-	if (copyButton) {
-		copyButton.addEventListener('click', copyLink, false);
+	if (copyButtons) {
+		copyButtons.forEach( button => button.addEventListener('click', () => copyLink(button), false));
 	}
 }
 

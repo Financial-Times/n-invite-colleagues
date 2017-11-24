@@ -2,6 +2,8 @@
 @import "o-colors/main";
 @import "o-typography/main";
 @import "o-share/main";
+$o-banner-is-silent: false;
+@import "o-banner/main";
 @include oShareBase(invite-colleagues);
 @include oShareActionIcon(facebook, invite-colleagues);
 @include oShareActionIcon(linkedin, invite-colleagues);
@@ -156,4 +158,58 @@
 
 .invite-colleagues__share-text {
 	padding: 10px 12px 10px 0;
+}
+
+
+.o-banner--marketing-secondary {
+
+	& .invite-colleagues__copy-link-button {
+		@include oButtonsTheme(inverse);
+		background-color: getColor('black');
+		color: getColpr('white');
+		border: getColor('black');
+	}
+
+	.o-banner__inner.invite-colleagues-banner {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.invite-colleagues-banner {
+		
+		&__intro {
+			flex: 2;
+				}
+		
+		&__copy {
+			flex: 2;
+			padding-right: 0;
+		}
+
+		&__share {
+			flex: 1;
+			padding-left: 0;
+
+			& .invite-colleagues__share {
+				@include oGridRespondTo(M) {
+					margin: 0;
+				}
+			}
+
+			& li {
+				padding-left: 0;
+			}
+
+			& li:before {
+				content: "";
+			}
+		}
+
+		& .invite-colleagues__inner--strong {
+			@include oTypographySansBold($scale: 2);
+
+		}
+
+	}
+
 }
