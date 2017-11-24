@@ -1,3 +1,5 @@
+const Banner = require ('o-banner');
+
 function copyLink (el) {
 	const copyDiv = el.parentNode;
 	const copyText = copyDiv.querySelector('.invite-colleagues__copy-link');
@@ -14,12 +16,22 @@ function copyLink (el) {
 
 }
 
+function constructBanner () {
+	if (document.querySelector('invite-colleagues-banner')) {
+		Banner.init();
+		document.removeEventListener('o.DOMContentLoaded', constructBanner);
+	}
+}
+
 function init () {
 	const copyButtons = document.querySelectorAll('.invite-colleagues__copy-link-button');
 
 	if (copyButtons) {
 		copyButtons.forEach( button => button.addEventListener('click', () => copyLink(button), false));
 	}
+
+	document.addEventListener('o.DOMContentLoaded', constructBanner);
 }
+
 
 module.exports = {init};
