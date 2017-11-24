@@ -178,17 +178,27 @@ $o-banner-is-silent: false;
 	.invite-colleagues-banner {
 		
 		&__intro {
-			flex: 2;
-				}
+			flex-basis: 100%;
+			text-align: center;
+			@include oGridRespondTo(L) {
+				flex: 2;
+			}
+		}
 		
 		&__copy {
-			flex: 2;
-			padding-right: 0;
+			flex-basis: 100%;
+			@include oGridRespondTo(L) {
+				flex: 2;
+				padding-right: 0;
+			}
 		}
 
 		&__share {
-			flex: 1;
-			padding-left: 0;
+			flex-basis: 100%;
+			@include oGridRespondTo(L) {
+				flex: 1;
+				padding-left: 0;
+			}
 
 			& .invite-colleagues__share {
 				@include oGridRespondTo(M) {
