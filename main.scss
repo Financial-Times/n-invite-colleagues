@@ -236,21 +236,23 @@
 			}
 		}
 
-		& ul {
-			margin: 0;
-		}
-
-		& ul li {
-			padding-left: 0;
-		}
-
-		& ul li:before {
-			content: "";
-		}
-
 		& .invite-colleagues__inner--strong {
 			@include oTypographySansBold($scale: 2);
 		}
+
+		//<--- TODO: this is here because of origami styling issue on o-banner - remove when issue resolved
+		ul {
+			margin: 0;
+		}
+
+		ul li {
+			padding-left: 0;
+		}
+
+		ul li:before {
+			content: "";
+		}
+		// --->
 
 	}
 }
