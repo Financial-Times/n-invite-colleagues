@@ -1,8 +1,8 @@
-function copyLink () {
+const Banner = require ('o-banner');
 
-	const copyText = document.querySelector('.invite-colleagues__copy-link');
-	const copyDiv = document.querySelector('.invite-colleagues__copy-outer');
-
+function copyLink (el) {
+	const copyDiv = el.parentNode;
+	const copyText = copyDiv.querySelector('.invite-colleagues__copy-link');
 	// select text
 	copyText.focus();
 	copyText.select();
@@ -16,12 +16,22 @@ function copyLink () {
 
 }
 
-function init () {
-	const copyButton = document.querySelector('.invite-colleagues__copy-link-button');
-
-	if (copyButton) {
-		copyButton.addEventListener('click', copyLink, false);
+function constructBanner () {
+	if (document.querySelector('invite-colleagues-banner')) {
+		Banner.init();
+		document.removeEventListener('o.DOMContentLoaded', constructBanner);
 	}
 }
+
+function init () {
+	const copyButtons = document.querySelectorAll('.invite-colleagues__copy-link-button');
+
+	if (copyButtons) {
+		copyButtons.forEach( button => button.addEventListener('click', () => copyLink(button), false));
+	}
+
+	document.addEventListener('o.DOMContentLoaded', constructBanner);
+}
+
 
 module.exports = {init};
