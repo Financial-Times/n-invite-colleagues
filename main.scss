@@ -140,7 +140,7 @@
 	.enhanced & {
 		display: inline-block;
 	}
-	
+
 	&::before {
 		content: "Copy link";
 		@include oGridRespondTo(XL) {
