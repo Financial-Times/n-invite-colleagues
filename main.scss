@@ -2,7 +2,6 @@
 @import "o-colors/main";
 @import "o-typography/main";
 @import "o-share/main";
-$o-banner-is-silent: false;
 @import "o-banner/main";
 @include oShareBase(invite-colleagues);
 @include oShareActionIcon(facebook, invite-colleagues);
@@ -31,12 +30,12 @@ $o-banner-is-silent: false;
 
 .invite-colleagues__copy-outer {
 	display: flex;
-	flex-wrap: wrap;
 	position: relative;
 	justify-content: center;
-	@include oGridRespondTo(M) {
+	flex-grow: 0;
+	flex-wrap: wrap;
+	@include oGridRespondTo(S) {
 		flex-wrap: nowrap;
-		flex-grow: 0;
 	}
 	.invite-colleagues__copy-input {
 		max-width: 450px;
@@ -72,6 +71,19 @@ $o-banner-is-silent: false;
 	display: flex;
 	flex-grow: 1;
 	position: relative;
+	&::after {
+		content: "";
+		width: auto;
+		height: 35px;
+		line-height: 35px;
+		background: linear-gradient(to left, getColor('white'), transparent);
+		display: block;
+		position: absolute;
+		top: 50%;
+		right: 1px;
+		transform: translateY(-50%);
+		padding-left: 60px;
+	}
 }
 
 .invite-colleagues__copy-link {
@@ -85,13 +97,10 @@ $o-banner-is-silent: false;
 	min-height: 40px;
 	min-width: 200px;
 	padding-left: 8px;
-	text-align: center;
+	text-align: left;
 	flex-grow: 2;
 	.enhanced & {
 		border-right-width: 1px;
-	}
-	@include oGridRespondTo(S) {
-		text-align: left;
 	}
 	@include oGridRespondTo(L) {
 		width: 100%;
@@ -114,18 +123,24 @@ $o-banner-is-silent: false;
 .invite-colleagues__copy-link-button {
 	@include oButtons($size: big, $theme: primary);
 	display: none;
+	position: relative;
+	@include oGridRespondTo(S) {
+		margin: 12px 0;
+	}
 	.enhanced & {
 		display: inline-block;
+	}
+	&::before {
+		content: "Copy link";
+		@include oGridRespondTo(XL) {
+			content: "Copy link and share";
+		}
 	}
 }
 
 .invite-colleagues__copy-text,
 .invite-colleagues__copy-link-button {
 	flex-grow: 0;
-	margin: 0 0 12px;
-	@include oGridRespondTo(S) {
-		margin: 12px 0;
-	}
 	@include oGridRespondTo(S, L) {
 		flex-grow: 0;
 	}
@@ -142,19 +157,50 @@ $o-banner-is-silent: false;
 	padding: 10px 12px 10px 0;
 }
 
-.o-banner--marketing-secondary {
-	& .invite-colleagues__copy-link-button {
+.invite-colleagues-banner__wrapper {
+	@include oBanner($class: 'o-banner', $themes: 'marketing-secondary');
+
+	.invite-colleagues__copy-link-button {
 		@include oButtonsTheme(inverse);
 		background-color: getColor('black');
-		color: getColpr('white');
+		color: getColor('white');
 		border: getColor('black');
+		@include oGridRespondTo($until: M) {
+			margin-bottom: 12px;
+		}
 	}
+
 	.o-banner__inner.invite-colleagues-banner {
 		display: flex;
 		flex-wrap: wrap;
 	}
-	.invite-colleagues-banner {
-		&__intro {
+
+	//<--- TODO: this is here because of origami styling issue on o-banner - remove when issue resolved
+	& .invite-colleagues__copy-outer {
+		margin: 12px 0;
+		@include oGridRespondTo(L) {
+			margin: 0;
+		}
+	}
+
+	& .invite-colleagues__copy-input {
+		margin-bottom: 12px;
+		@include oGridRespondTo(M) {
+			margin: 0;
+		}
+	}
+
+	& .invite-colleagues__share {
+		margin-top: 12px;
+		@include oGridRespondTo(L) {
+			margin: 0;
+		}
+	} //--->
+
+
+	.o-banner__content {
+
+		&.invite-colleagues-banner__intro {
 			flex-basis: 100%;
 			text-align: center;
 			@include oGridRespondTo(L) {
@@ -162,33 +208,38 @@ $o-banner-is-silent: false;
 				text-align: left;
 			}
 		}
-		&__copy {
+
+		&.invite-colleagues-banner__copy {
 			flex-basis: 100%;
 			@include oGridRespondTo(L) {
 				flex: 2;
 				padding-right: 0;
 			}
 		}
-		&__share {
+
+		&.invite-colleagues-banner__share {
 			flex-basis: 100%;
 			@include oGridRespondTo(L) {
 				flex: 1;
 				padding-left: 0;
 			}
-			& .invite-colleagues__share {
-				@include oGridRespondTo(M) {
-					margin: 0;
-				}
-			}
-			& li {
-				padding-left: 0;
-			}
-			& li:before {
-				content: "";
-			}
 		}
+
+		& ul {
+			margin: 0;
+		}
+
+		& ul li {
+			padding-left: 0;
+		}
+
+		& ul li:before {
+			content: "";
+		}
+
 		& .invite-colleagues__inner--strong {
 			@include oTypographySansBold($scale: 2);
 		}
+
 	}
 }
