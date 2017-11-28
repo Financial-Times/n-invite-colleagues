@@ -7,6 +7,7 @@
 @include oShareActionIcon(facebook, invite-colleagues);
 @include oShareActionIcon(linkedin, invite-colleagues);
 @include oShareActionIcon(mail, invite-colleagues);
+
 .invite-colleagues__outer {
 	background: getColor('wheat');
 	text-align: center;
@@ -34,13 +35,17 @@
 	justify-content: center;
 	flex-grow: 0;
 	flex-wrap: wrap;
+
 	@include oGridRespondTo(S) {
 		flex-wrap: nowrap;
 	}
+
 	.invite-colleagues__copy-input {
 		max-width: 450px;
 	}
+
 	&.copy-success {
+
 		.invite-colleagues__copy-input {
 			&::after {
 				@include oIconsGetIcon('tick', getColor('jade'), 24);
@@ -61,6 +66,7 @@
 				}
 			}
 		}
+
 		.invite-colleagues__copy-link {
 			border-color: getColor('jade');
 		}
@@ -99,9 +105,11 @@
 	padding-left: 8px;
 	text-align: left;
 	flex-grow: 2;
+
 	.enhanced & {
 		border-right-width: 1px;
 	}
+
 	@include oGridRespondTo(L) {
 		width: 100%;
 	}
@@ -115,6 +123,7 @@
 	color: getColor('black-80');
 	display: inline-block;
 	padding: 11px 20px;
+
 	.enhanced & {
 		display: none;
 	}
@@ -127,9 +136,11 @@
 	@include oGridRespondTo(S) {
 		margin: 12px 0;
 	}
+
 	.enhanced & {
 		display: inline-block;
 	}
+	
 	&::before {
 		content: "Copy link";
 		@include oGridRespondTo(XL) {
