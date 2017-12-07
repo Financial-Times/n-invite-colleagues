@@ -1,7 +1,7 @@
 const Banner = require ('o-banner');
 const copyButtons = document.querySelectorAll('.invite-colleagues__copy-link-button');
 
-function trackEvent({ action } = {}) {
+function trackEvent ({ action } = {}) {
 	document.body.dispatchEvent(new CustomEvent('oTracking.event', {
 		detail: {
 			category: 'component',
@@ -45,10 +45,10 @@ function initEmbedded () {
 	}
 }
 
-function initBanner({flags}) {
+function initBanner ({flags}) {
 	if (flags.b2bUpsell) {
 		document.addEventListener('o.DOMContentLoaded', constructBanner);
-		copyButtons.forEach(button => button.addEventListener('click', () => copyLink(button, isBanner=true), false));
+		copyButtons.forEach(button => button.addEventListener('click', () => copyLink(button, true), false));
 	}
 }
 
