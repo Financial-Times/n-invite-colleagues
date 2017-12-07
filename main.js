@@ -1,6 +1,18 @@
 const Banner = require ('o-banner');
+const copyButtons = document.querySelectorAll('.invite-colleagues__copy-link-button');
 
-function copyLink (el) {
+function trackEvent({ action } = {}) {
+	document.body.dispatchEvent(new CustomEvent('oTracking.event', {
+		detail: {
+			category: 'component',
+			action,
+			messaging: 'invite-colleagues-banner'
+		},
+		bubbles: true
+	}));
+}
+
+function copyLink (el, isBanner) {
 	const copyDiv = el.parentNode;
 	const copyText = copyDiv.querySelector('.invite-colleagues__copy-link');
 	// select text
@@ -11,6 +23,9 @@ function copyLink (el) {
 		// copy text
 		document.execCommand('copy');
 		copyDiv.classList.add('copy-success'); // adds after element with tick icon and confirmation text
+		if (isBanner) {
+			trackEvent({ action: 'act' });
+		}
 	} catch (err) {
 	}
 
@@ -19,19 +34,22 @@ function copyLink (el) {
 function constructBanner () {
 	if (document.querySelector('invite-colleagues-banner')) {
 		Banner.init();
+		trackEvent({ action: 'view' });
 		document.removeEventListener('o.DOMContentLoaded', constructBanner);
 	}
 }
 
-function init () {
-	const copyButtons = document.querySelectorAll('.invite-colleagues__copy-link-button');
-
+function initEmbedded () {
 	if (copyButtons) {
 		copyButtons.forEach( button => button.addEventListener('click', () => copyLink(button), false));
 	}
-
-	document.addEventListener('o.DOMContentLoaded', constructBanner);
 }
 
+function initBanner({flags}) {
+	if (flags.b2bUpsell) {
+		document.addEventListener('o.DOMContentLoaded', constructBanner);
+		copyButtons.forEach(button => button.addEventListener('click', () => copyLink(button, isBanner=true), false));
+	}
+}
 
-module.exports = {init};
+module.exports = {initEmbedded, initBanner};

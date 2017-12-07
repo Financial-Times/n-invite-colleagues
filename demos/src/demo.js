@@ -2,7 +2,8 @@ import oTracking from 'o-tracking';
 
 import inviteColleagues from '../../main';
 
-inviteColleagues.init();
+inviteColleagues.initEmbedded();
+inviteColleagues.initBanner({ flags: { b2bUpsell: true } });
 
 document.documentElement.classList.add('js', 'enhanced');
 
