@@ -32,7 +32,7 @@ function copyLink (el, isBanner) {
 }
 
 function constructBanner () {
-	if (document.querySelector('.invite-colleagues-banner__wrapper')) {		
+	if (document.querySelector('.invite-colleagues-banner__wrapper')) {
 		new Banner(document.querySelector('.invite-colleagues-banner__wrapper'));
 		trackEvent({ action: 'view' });
 		document.removeEventListener('o.DOMContentLoaded', constructBanner);
@@ -45,7 +45,7 @@ function initEmbedded () {
 	}
 }
 
-function initBanner () {	
+function initBanner () {
 		document.addEventListener('DOMContentLoaded', constructBanner);
 		copyButtons.forEach(button => button.addEventListener('click', () => copyLink(button, true), false));
 }
