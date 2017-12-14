@@ -2,12 +2,12 @@ import oTracking from 'o-tracking';
 
 import inviteColleagues from '../../main';
 
-const flags = {};
+// const flags = { b2bUpsellBanner: true };
 
 inviteColleagues.initEmbedded();
-inviteColleagues.initBanner(flags);
+inviteColleagues.initBanner();
 
-document.documentElement.classList.add('js', 'enhanced');
+document.body.classList.add('js', 'enhanced');
 
 oTracking.init({
 	server: 'https://spoor-api.ft.com/px.gif',

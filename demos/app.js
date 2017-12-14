@@ -23,7 +23,7 @@ const app = module.exports = express({
 });
 
 app.get('/', (req, res) => {
-	res.render('index',{ layout: 'wrapper', title: 'Demo' });
+	res.render('index', { layout: 'wrapper', title: 'Demo', flags: { b2bUpsellBanner: true } });
 });
 
 app.post('/email-app-links', (req, res) => {
