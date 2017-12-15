@@ -1,4 +1,3 @@
-const Banner = require ('o-banner');
 const copyButtons = document.querySelectorAll('.invite-colleagues__copy-link-button');
 
 function trackEvent ({ action } = {}) {
@@ -31,14 +30,6 @@ function copyLink (el, isBanner) {
 
 }
 
-function constructBanner () {
-	if (document.querySelector('.invite-colleagues-banner__wrapper')) {
-		new Banner(document.querySelector('.invite-colleagues-banner__wrapper'));
-		trackEvent({ action: 'view' });
-		document.removeEventListener('o.DOMContentLoaded', constructBanner);
-	}
-}
-
 function initEmbedded () {
 	if (copyButtons) {
 		copyButtons.forEach( button => button.addEventListener('click', () => copyLink(button), false));
@@ -46,8 +37,11 @@ function initEmbedded () {
 }
 
 function initBanner () {
-		document.addEventListener('DOMContentLoaded', constructBanner);
-		copyButtons.forEach(button => button.addEventListener('click', () => copyLink(button, true), false));
+	// Note: banner is constructed by o-banner via the markup so no need to construct again here
+	copyButtons.forEach(button => button.addEventListener('click', () => copyLink(button, true), false));
+	if (document.querySelector('.invite-colleagues-banner__wrapper')) {
+		trackEvent({ action: 'view' });
+	}
 }
 
 module.exports = {initEmbedded, initBanner};

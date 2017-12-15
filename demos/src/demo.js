@@ -2,8 +2,6 @@ import oTracking from 'o-tracking';
 
 import inviteColleagues from '../../main';
 
-// const flags = { b2bUpsellBanner: true };
-
 inviteColleagues.initEmbedded();
 inviteColleagues.initBanner();
 
