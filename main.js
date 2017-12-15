@@ -1,3 +1,5 @@
+const Banner = require('o-banner');
+
 const copyButtons = document.querySelectorAll('.invite-colleagues__copy-link-button');
 
 function trackEvent ({ action } = {}) {
@@ -40,6 +42,7 @@ function initBanner () {
 	// Note: banner is constructed by o-banner via the markup so no need to construct again here
 	copyButtons.forEach(button => button.addEventListener('click', () => copyLink(button, true), false));
 	if (document.querySelector('.invite-colleagues-banner__wrapper')) {
+		new Banner(document.querySelector('.invite-colleagues-banner__wrapper'));
 		trackEvent({ action: 'view' });
 	}
 }
