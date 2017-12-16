@@ -39,12 +39,11 @@ function initEmbedded () {
 }
 
 function initBanner () {
-	// Note: banner is constructed by o-banner via the markup so no need to construct again here
-	copyButtons.forEach(button => button.addEventListener('click', () => copyLink(button, true), false));
 	if (document.querySelector('.invite-colleagues-banner__wrapper')) {
 		new Banner(document.querySelector('.invite-colleagues-banner__wrapper'));
 		trackEvent({ action: 'view' });
 	}
+	copyButtons.forEach(button => button.addEventListener('click', () => copyLink(button, true), false));
 }
 
 module.exports = {initEmbedded, initBanner};
