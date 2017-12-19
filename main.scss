@@ -123,6 +123,7 @@
 	color: getColor('black-80');
 	display: inline-block;
 	padding: 11px 20px;
+	margin: 12px 0;
 
 	.enhanced & {
 		display: none;
@@ -133,9 +134,7 @@
 	@include oButtons($size: big, $theme: primary);
 	display: none;
 	position: relative;
-	@include oGridRespondTo(S) {
-		margin: 12px 0;
-	}
+	margin: 12px 0;
 
 	.enhanced & {
 		display: inline-block;
@@ -161,7 +160,7 @@
 	@include oTypographySans($scale: 0);
 	display: flex;
 	justify-content: center;
-	margin: 12px 0 24px;
+	margin: 12px 0;
 }
 
 .invite-colleagues__share-text {
@@ -185,29 +184,6 @@
 		display: flex;
 		flex-wrap: wrap;
 	}
-
-	//<--- TODO: this is here because of origami styling issue on o-banner - remove when issue resolved
-	& .invite-colleagues__copy-outer {
-		margin: 12px 0;
-		@include oGridRespondTo(L) {
-			margin: 0;
-		}
-	}
-
-	& .invite-colleagues__copy-input {
-		margin-bottom: 12px;
-		@include oGridRespondTo(M) {
-			margin: 0;
-		}
-	}
-
-	& .invite-colleagues__share {
-		margin-top: 12px;
-		@include oGridRespondTo(L) {
-			margin: 0;
-		}
-	} //--->
-
 
 	.o-banner__content {
 
@@ -239,20 +215,6 @@
 		& .invite-colleagues__inner--strong {
 			@include oTypographySansBold($scale: 2);
 		}
-
-		//<--- TODO: this is here because of origami styling issue on o-banner - remove when issue resolved
-		ul {
-			margin: 0;
-		}
-
-		ul li {
-			padding-left: 0;
-		}
-
-		ul li:before {
-			content: "";
-		}
-		// --->
 
 	}
 }
