@@ -21,3 +21,6 @@ unit-test:
 
 test: verify unit-test
 	make a11y
+
+tidy: 
+	echo "nothing to tidy"
