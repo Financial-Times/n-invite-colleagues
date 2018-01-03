@@ -32,7 +32,7 @@ module.exports = function (config) {
 
 		// Inject our template into the page.
 		injectHtml: {
-			file: 'templates/index.html'
+			file: 'demos/templates/index.html'
 		},
 
 
