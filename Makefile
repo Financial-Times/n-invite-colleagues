@@ -4,7 +4,7 @@ node_modules/@financial-times/n-gage/index.mk:
 
 -include node_modules/@financial-times/n-gage/index.mk
 
-demo-build:
+demo-build: link-templates
 	webpack --config demos/webpack.config.js
 	@$(DONE)
 
@@ -21,3 +21,8 @@ unit-test:
 
 test: verify unit-test
 	make a11y
+
+link-templates:
+	echo "Creating symlink to mimic bower_component setup /templates -> public/n-invite-colleagues"
+	mkdir -p "$(CURDIR)/public/n-invite-colleagues"
+	ln -sf "$(CURDIR)/templates" "$(CURDIR)/public/n-invite-colleagues/"

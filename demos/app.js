@@ -1,6 +1,7 @@
 /* eslint no-console:0 */
 'use strict';
 
+const { resolve } = require('path');
 const chalk = require('chalk');
 const errorHighlight = chalk.bold.red;
 const highlight = chalk.bold.green;
@@ -16,7 +17,7 @@ const app = module.exports = express({
 	withAnonMiddleware: false,
 	hasHeadCss: false,
 	viewsDirectory: '/demos/templates',
-	partialsDirectory: process.cwd(),
+	partialsDirectory: resolve(__dirname, '../public'),
 	directory: process.cwd(),
 	demo: true,
 	s3o: false
