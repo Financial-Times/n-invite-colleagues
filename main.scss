@@ -170,6 +170,10 @@
 .invite-colleagues-banner__wrapper {
 	@include oBanner($class: 'o-banner', $themes: 'marketing-secondary');
 
+	.o-banner.o-banner--marketing-secondary {
+		z-index: 100;
+	}
+
 	.invite-colleagues__copy-link-button {
 		@include oButtonsTheme(inverse);
 		background-color: getColor('black');
