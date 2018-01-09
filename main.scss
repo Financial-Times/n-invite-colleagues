@@ -3,10 +3,10 @@
 @import "o-typography/main";
 @import "o-share/main";
 @import "o-banner/main";
-@include oShareBase(invite-colleagues);
-@include oShareActionIcon(facebook, invite-colleagues);
-@include oShareActionIcon(linkedin, invite-colleagues);
-@include oShareActionIcon(mail, invite-colleagues);
+@include oShareBase(o-share);
+@include oShareActionIcon(facebook, o-share);
+@include oShareActionIcon(linkedin, o-share);
+@include oShareActionIcon(mail, o-share);
 
 .invite-colleagues__outer {
 	background: getColor('wheat');
