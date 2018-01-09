@@ -167,6 +167,14 @@
 	padding: 10px 12px 10px 0;
 }
 
+// weird display on icons - removing position relative fixes it- TODO upgrade to o-icons v6 and deal with this properly
+.invite-colleagues.o-share {
+	.o-share__action--icon:after {
+		position: unset;
+	}
+}
+
+
 .invite-colleagues-banner__wrapper {
 	@include oBanner($class: 'o-banner', $themes: 'marketing-secondary');
 
