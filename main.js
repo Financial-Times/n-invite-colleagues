@@ -1,4 +1,7 @@
+const OShare = require('o-share');
 const Banner = require('o-banner');
+
+OShare.init();
 
 const copyButtons = document.querySelectorAll('.invite-colleagues__copy-link-button');
 

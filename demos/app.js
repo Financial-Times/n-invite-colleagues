@@ -5,7 +5,6 @@ const { resolve } = require('path');
 const chalk = require('chalk');
 const errorHighlight = chalk.bold.red;
 const highlight = chalk.bold.green;
-
 const express = require('@financial-times/n-internal-tool');
 
 const app = module.exports = express({
