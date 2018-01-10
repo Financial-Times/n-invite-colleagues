@@ -43,7 +43,7 @@ function initEmbedded () {
 
 function initBanner () {
 	if (document.querySelector('.invite-colleagues-banner__wrapper')) {
-		new Banner(document.querySelector('.invite-colleagues-banner__wrapper'));
+		Banner.init();
 		trackEvent({ action: 'view' });
 	}
 	copyButtons.forEach(button => button.addEventListener('click', () => copyLink(button, true), false));
