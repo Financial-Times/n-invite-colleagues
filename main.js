@@ -36,11 +36,7 @@ function copyLink (el, isBanner) {
 const shareContainer = document.querySelector('.invite-colleagues__share');
 
 const shouldIinitOshare = function () {
-	if (shareContainer.querySelector('[data-o-share--js]')) {
-		return false;
-	} else {
-		return true;
-	}
+	return !shareContainer.querySelector('[data-o-share--js]');
 };
 
 function initEmbedded () {
