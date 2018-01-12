@@ -1,8 +1,6 @@
 const OShare = require('o-share');
 const Banner = require('o-banner');
 
-OShare.init();
-
 const copyButtons = document.querySelectorAll('.invite-colleagues__copy-link-button');
 
 function trackEvent ({ action } = {}) {
@@ -35,13 +33,29 @@ function copyLink (el, isBanner) {
 
 }
 
+const shareContainer = document.querySelector('.invite-colleagues__share');
+
+const shouldIinitOshare = function () {
+	if (shareContainer.querySelector('[data-o-share--js]')) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
 function initEmbedded () {
+	if(shouldIinitOshare) {
+		OShare.init(shareContainer);
+	}
 	if (copyButtons) {
 		copyButtons.forEach( button => button.addEventListener('click', () => copyLink(button), false));
 	}
 }
 
 function initBanner () {
+	if (shouldIinitOshare) {
+		OShare.init(shareContainer);
+	}
 	if (document.querySelector('.invite-colleagues-banner__wrapper')) {
 		Banner.init();
 		trackEvent({ action: 'view' });
