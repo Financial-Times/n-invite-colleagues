@@ -41,7 +41,7 @@ const shouldIinitOshare = function () {
 	} else {
 		return true;
 	}
-}
+};
 
 function initEmbedded () {
 	if(shouldIinitOshare) {
