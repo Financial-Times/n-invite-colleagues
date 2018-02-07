@@ -1,20 +1,8 @@
 const OShare = require('o-share');
-const Banner = require('o-banner');
 
 const copyButtons = document.querySelectorAll('.invite-colleagues__copy-link-button');
 
-function trackEvent ({ action } = {}) {
-	document.body.dispatchEvent(new CustomEvent('oTracking.event', {
-		detail: {
-			category: 'component',
-			action,
-			messaging: 'invite-colleagues-banner'
-		},
-		bubbles: true
-	}));
-}
-
-function copyLink (el, isBanner) {
+function copyLink (el) {
 	const copyDiv = el.parentNode;
 	const copyText = copyDiv.querySelector('.invite-colleagues__copy-link');
 	// select text
@@ -25,9 +13,6 @@ function copyLink (el, isBanner) {
 		// copy text
 		document.execCommand('copy');
 		copyDiv.classList.add('copy-success'); // adds after element with tick icon and confirmation text
-		if (isBanner) {
-			trackEvent({ action: 'act' });
-		}
 	} catch (err) {
 	}
 
@@ -48,15 +33,4 @@ function initEmbedded () {
 	}
 }
 
-function initBanner () {
-	if (shouldIinitOshare) {
-		OShare.init(shareContainer);
-	}
-	if (document.querySelector('.invite-colleagues-banner__wrapper')) {
-		Banner.init();
-		trackEvent({ action: 'view' });
-	}
-	copyButtons.forEach(button => button.addEventListener('click', () => copyLink(button, true), false));
-}
-
-module.exports = {initEmbedded, initBanner};
+module.exports = {initEmbedded};
