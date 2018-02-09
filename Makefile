@@ -16,12 +16,6 @@ a11y: demo-build
 	@PA11Y=true node demos/app
 	@$(DONE)
 
-unit-test:
-	karma start
-
-test: verify unit-test
-	make a11y
-
 link-templates:
 	echo "Creating symlink to mimic bower_component setup /templates -> public/n-invite-colleagues"
 	mkdir -p "$(CURDIR)/public/n-invite-colleagues"
