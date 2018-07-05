@@ -1,6 +1,6 @@
 const OShare = require('o-share');
 
-const copyButtons = document.querySelectorAll('.invite-colleagues__copy-link-button');
+const copyButtons = [...document.querySelectorAll('.invite-colleagues__copy-link-button')];
 
 function copyLink (el) {
 	const copyDiv = el.parentNode;
