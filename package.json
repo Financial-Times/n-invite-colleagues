@@ -13,7 +13,8 @@
     "chalk": "^2.0.1",
     "css-loader": "^0.26.1",
     "eslint": "^4.1.1",
-    "pa11y-ci": "^1.2.0"
+    "pa11y-ci": "^1.2.0",
+    "snyk": "^1.167.2"
   },
   "dependencies": {
     "@financial-times/n-logger": "^6.0.0"
@@ -25,6 +26,7 @@
   "scripts": {
     "precommit": "node_modules/.bin/secret-squirrel",
     "prepush": "make verify -j3",
-    "commitmsg": "node_modules/.bin/secret-squirrel-commitmsg"
+    "commitmsg": "node_modules/.bin/secret-squirrel-commitmsg",
+    "prepare": "npx snyk protect || npx snyk protect -d || true"
   }
 }
